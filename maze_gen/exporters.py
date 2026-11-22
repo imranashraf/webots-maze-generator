@@ -28,7 +28,7 @@ def export_to_webots_wbt(
     half_y = floor_y / 2.0
     cam_height = round(max(floor_x, floor_y) * 2.6, 2)
 
-    lines = [
+    header = "\n".join([
         "#VRML_SIM R2025a utf8",
         "",
         'EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackground.proto"',
@@ -53,7 +53,7 @@ def export_to_webots_wbt(
         f"  wallHeight {wall_height}",
         "}",
         "",
-    ]
+    ])
 
     def make_wall_block(name, x, y, length, is_horizontal):
         rot_line = "  rotation 0 0 1 1.5708\n" if is_horizontal else ""
@@ -70,6 +70,7 @@ def export_to_webots_wbt(
             f"}}\n"
         )
 
+    wall_blocks = []
     wall_idx = 1
 
     # Merge vertical walls along columns
@@ -84,7 +85,7 @@ def export_to_webots_wbt(
                 span = r - start_r
                 length = span * cell_size
                 wy = -half_y + (start_r + span / 2.0) * cell_size
-                lines.append(make_wall_block(f"v_wall_{wall_idx}", wx, wy, length, False))
+                wall_blocks.append(make_wall_block(f"v_wall_{wall_idx}", wx, wy, length, False))
                 wall_idx += 1
             else:
                 r += 1
@@ -101,14 +102,14 @@ def export_to_webots_wbt(
                 span = c - start_c
                 length = span * cell_size
                 wx = -half_x + (start_c + span / 2.0) * cell_size
-                lines.append(make_wall_block(f"h_wall_{wall_idx}", wx, wy, length, True))
+                wall_blocks.append(make_wall_block(f"h_wall_{wall_idx}", wx, wy, length, True))
                 wall_idx += 1
             else:
                 c += 1
 
     os.makedirs(os.path.dirname(os.path.abspath(filename)), exist_ok=True)
     with open(filename, "w", encoding="utf-8") as f:
-        f.writelines(lines)
+        f.write(header + "\n" + "".join(wall_blocks))
 
     return wall_idx - 1
 
