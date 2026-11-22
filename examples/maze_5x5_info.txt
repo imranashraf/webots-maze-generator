@@ -5,19 +5,19 @@ Graph File : maze_5x5_graph.json
 Seed       : Random
 Cell Size  : 0.4 m
 Arena Size : 2.0 m x 2.0 m
-Wall Nodes : 8 merged walls
-Start (S)  : cell [0, 0] -> world [-0.8, -0.8] m
+Wall Nodes : 11 merged walls
+Start (S)  : cell [0, 0] -> world [-0.8, -0.8] m (yaw: 0.0 rad / 0.0 deg)
 Goal  (G)  : cell [4, 4] -> world [0.8, 0.8] m
 
 Top-Down Layout:
 +---+---+---+---+---+
-|                 G |
-+   +   +---+---+   +
-|   |   |       |   |
+|           |     G |
++   +---+   +---+   +
+|   |           |   |
++   +---+---+   +   +
+|       |   |   |   |
 +   +   +   +   +   +
 |   |   |   |       |
-+   +   +   +---+---+
-|   |   |           |
-+---+   +---+---+   +
++---+   +   +---+   +
 | S     |           |
 +---+---+---+---+---+

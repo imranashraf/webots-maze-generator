@@ -5,6 +5,7 @@ EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/project
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/floors/protos/RectangleArena.proto"
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/apartment_structure/protos/Wall.proto"
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/Roughcast.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/gctronic/e-puck/protos/E-puck.proto"
 
 WorldInfo {
 }
@@ -23,8 +24,26 @@ RectangleArena {
 }
 
 Wall {
-  translation -0.6 0.0 0
+  translation -0.6 -0.4 0
   name "v_wall_1"
+  size 0.04 0.4 0.12
+  appearance Roughcast {
+    colorOverride 0.141176 0.121569 0.192157
+    textureTransform TextureTransform { scale 2.4 1 }
+  }
+}
+Wall {
+  translation -0.6 0.4 0
+  name "v_wall_2"
+  size 0.04 0.4 0.12
+  appearance Roughcast {
+    colorOverride 0.141176 0.121569 0.192157
+    textureTransform TextureTransform { scale 2.4 1 }
+  }
+}
+Wall {
+  translation -0.2 -0.4 0
+  name "v_wall_3"
   size 0.04 1.2 0.12
   appearance Roughcast {
     colorOverride 0.141176 0.121569 0.192157
@@ -32,27 +51,27 @@ Wall {
   }
 }
 Wall {
-  translation -0.2 -0.2 0
-  name "v_wall_2"
-  size 0.04 1.6 0.12
-  appearance Roughcast {
-    colorOverride 0.141176 0.121569 0.192157
-    textureTransform TextureTransform { scale 2.4 1 }
-  }
-}
-Wall {
-  translation 0.2 0.0 0
-  name "v_wall_3"
-  size 0.04 0.4 0.12
-  appearance Roughcast {
-    colorOverride 0.141176 0.121569 0.192157
-    textureTransform TextureTransform { scale 2.4 1 }
-  }
-}
-Wall {
-  translation 0.6 0.4 0
+  translation 0.2 -0.2 0
   name "v_wall_4"
+  size 0.04 0.8 0.12
+  appearance Roughcast {
+    colorOverride 0.141176 0.121569 0.192157
+    textureTransform TextureTransform { scale 2.4 1 }
+  }
+}
+Wall {
+  translation 0.2 0.8 0
+  name "v_wall_5"
   size 0.04 0.4 0.12
+  appearance Roughcast {
+    colorOverride 0.141176 0.121569 0.192157
+    textureTransform TextureTransform { scale 2.4 1 }
+  }
+}
+Wall {
+  translation 0.6 0.2 0
+  name "v_wall_6"
+  size 0.04 0.8 0.12
   appearance Roughcast {
     colorOverride 0.141176 0.121569 0.192157
     textureTransform TextureTransform { scale 2.4 1 }
@@ -61,7 +80,7 @@ Wall {
 Wall {
   translation -0.8 -0.6 0
   rotation 0 0 1 1.5708
-  name "h_wall_5"
+  name "h_wall_7"
   size 0.04 0.4 0.12
   appearance Roughcast {
     colorOverride 0.141176 0.121569 0.192157
@@ -69,32 +88,64 @@ Wall {
   }
 }
 Wall {
-  translation 0.2 -0.6 0
-  rotation 0 0 1 1.5708
-  name "h_wall_6"
-  size 0.04 0.8 0.12
-  appearance Roughcast {
-    colorOverride 0.141176 0.121569 0.192157
-    textureTransform TextureTransform { scale 2.4 1 }
-  }
-}
-Wall {
-  translation 0.6 -0.2 0
-  rotation 0 0 1 1.5708
-  name "h_wall_7"
-  size 0.04 0.8 0.12
-  appearance Roughcast {
-    colorOverride 0.141176 0.121569 0.192157
-    textureTransform TextureTransform { scale 2.4 1 }
-  }
-}
-Wall {
-  translation 0.2 0.6 0
+  translation 0.4 -0.6 0
   rotation 0 0 1 1.5708
   name "h_wall_8"
+  size 0.04 0.4 0.12
+  appearance Roughcast {
+    colorOverride 0.141176 0.121569 0.192157
+    textureTransform TextureTransform { scale 2.4 1 }
+  }
+}
+Wall {
+  translation -0.2 0.2 0
+  rotation 0 0 1 1.5708
+  name "h_wall_9"
   size 0.04 0.8 0.12
   appearance Roughcast {
     colorOverride 0.141176 0.121569 0.192157
     textureTransform TextureTransform { scale 2.4 1 }
   }
+}
+Wall {
+  translation -0.4 0.6 0
+  rotation 0 0 1 1.5708
+  name "h_wall_10"
+  size 0.04 0.4 0.12
+  appearance Roughcast {
+    colorOverride 0.141176 0.121569 0.192157
+    textureTransform TextureTransform { scale 2.4 1 }
+  }
+}
+Wall {
+  translation 0.4 0.6 0
+  rotation 0 0 1 1.5708
+  name "h_wall_11"
+  size 0.04 0.4 0.12
+  appearance Roughcast {
+    colorOverride 0.141176 0.121569 0.192157
+    textureTransform TextureTransform { scale 2.4 1 }
+  }
+}
+
+E-puck {
+  translation -0.8 -0.8 0
+  rotation 0 0 1 0.000000
+  controller "maze_solver"
+  turretSlot [
+    Lidar {
+      name "lidar"
+      horizontalResolution 360
+      fieldOfView 6.283185
+      numberOfLayers 1
+      minRange 0.03
+      maxRange 2.0
+    }
+    Compass {
+      name "compass"
+    }
+    GPS {
+      name "gps"
+    }
+  ]
 }

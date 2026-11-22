@@ -28,11 +28,25 @@ def main():
     txt_path = os.path.join(args.out_dir, f"{base_name}_info.txt")
 
     graph, v_walls, h_walls = generate_perfect_maze(args.rows, args.cols, seed=args.seed)
+    
     wall_count = export_to_webots_wbt(
-        args.rows, args.cols, v_walls, h_walls, filename=wbt_path, cell_size=args.cell_size
+        args.rows,
+        args.cols,
+        v_walls,
+        h_walls,
+        filename=wbt_path,
+        cell_size=args.cell_size,
+        graph=graph,
+        controller=getattr(args, "controller", "maze_solver"),
     )
     export_graph_json(
-        graph, args.rows, args.cols, wbt_filename=wbt_path, json_filename=json_path, cell_size=args.cell_size, seed=args.seed
+        graph,
+        args.rows,
+        args.cols,
+        wbt_filename=wbt_path,
+        json_filename=json_path,
+        cell_size=args.cell_size,
+        seed=args.seed,
     )
     export_maze_txt(
         graph,
