@@ -23,45 +23,45 @@ RectangleArena {
 }
 
 Wall {
-  translation -1.2 -1.4 0
+  translation -1.2 -0.8 0
   name "v_wall_1"
-  size 0.04 0.4 0.12
+  size 0.04 1.6 0.12
   appearance Roughcast {
     colorOverride 0.141176 0.121569 0.192157
     textureTransform TextureTransform { scale 2.4 1 }
   }
 }
 Wall {
-  translation -1.2 -0.2 0
+  translation -1.2 1.2 0
   name "v_wall_2"
-  size 0.04 0.4 0.12
+  size 0.04 0.8 0.12
   appearance Roughcast {
     colorOverride 0.141176 0.121569 0.192157
     textureTransform TextureTransform { scale 2.4 1 }
   }
 }
 Wall {
-  translation -1.2 1.0 0
+  translation -0.8 0.8 0
   name "v_wall_3"
-  size 0.04 1.2 0.12
+  size 0.04 0.8 0.12
   appearance Roughcast {
     colorOverride 0.141176 0.121569 0.192157
     textureTransform TextureTransform { scale 2.4 1 }
   }
 }
 Wall {
-  translation -0.8 0.6 0
+  translation -0.4 -1.2 0
   name "v_wall_4"
-  size 0.04 1.2 0.12
+  size 0.04 0.8 0.12
   appearance Roughcast {
     colorOverride 0.141176 0.121569 0.192157
     textureTransform TextureTransform { scale 2.4 1 }
   }
 }
 Wall {
-  translation -0.4 -0.6 0
+  translation -0.4 -0.2 0
   name "v_wall_5"
-  size 0.04 1.2 0.12
+  size 0.04 0.4 0.12
   appearance Roughcast {
     colorOverride 0.141176 0.121569 0.192157
     textureTransform TextureTransform { scale 2.4 1 }
@@ -79,23 +79,23 @@ Wall {
 Wall {
   translation 0.0 -1.0 0
   name "v_wall_7"
-  size 0.04 1.2 0.12
+  size 0.04 0.4 0.12
   appearance Roughcast {
     colorOverride 0.141176 0.121569 0.192157
     textureTransform TextureTransform { scale 2.4 1 }
   }
 }
 Wall {
-  translation 0.0 1.2 0
+  translation 0.0 0.2 0
   name "v_wall_8"
-  size 0.04 0.8 0.12
+  size 0.04 0.4 0.12
   appearance Roughcast {
     colorOverride 0.141176 0.121569 0.192157
     textureTransform TextureTransform { scale 2.4 1 }
   }
 }
 Wall {
-  translation 0.4 -0.2 0
+  translation 0.0 1.4 0
   name "v_wall_9"
   size 0.04 0.4 0.12
   appearance Roughcast {
@@ -104,17 +104,8 @@ Wall {
   }
 }
 Wall {
-  translation 0.4 0.8 0
+  translation 0.4 -1.4 0
   name "v_wall_10"
-  size 0.04 0.8 0.12
-  appearance Roughcast {
-    colorOverride 0.141176 0.121569 0.192157
-    textureTransform TextureTransform { scale 2.4 1 }
-  }
-}
-Wall {
-  translation 0.8 0.2 0
-  name "v_wall_11"
   size 0.04 0.4 0.12
   appearance Roughcast {
     colorOverride 0.141176 0.121569 0.192157
@@ -122,7 +113,16 @@ Wall {
   }
 }
 Wall {
-  translation 0.8 1.2 0
+  translation 0.4 1.2 0
+  name "v_wall_11"
+  size 0.04 0.8 0.12
+  appearance Roughcast {
+    colorOverride 0.141176 0.121569 0.192157
+    textureTransform TextureTransform { scale 2.4 1 }
+  }
+}
+Wall {
+  translation 0.8 -0.8 0
   name "v_wall_12"
   size 0.04 0.8 0.12
   appearance Roughcast {
@@ -131,8 +131,17 @@ Wall {
   }
 }
 Wall {
-  translation 1.2 -1.0 0
+  translation 0.8 0.6 0
   name "v_wall_13"
+  size 0.04 1.2 0.12
+  appearance Roughcast {
+    colorOverride 0.141176 0.121569 0.192157
+    textureTransform TextureTransform { scale 2.4 1 }
+  }
+}
+Wall {
+  translation 1.2 -1.0 0
+  name "v_wall_14"
   size 0.04 0.4 0.12
   appearance Roughcast {
     colorOverride 0.141176 0.121569 0.192157
@@ -140,9 +149,9 @@ Wall {
   }
 }
 Wall {
-  translation 1.2 0.4 0
-  name "v_wall_14"
-  size 0.04 1.6 0.12
+  translation 1.2 0.0 0
+  name "v_wall_15"
+  size 0.04 0.8 0.12
   appearance Roughcast {
     colorOverride 0.141176 0.121569 0.192157
     textureTransform TextureTransform { scale 2.4 1 }
@@ -151,7 +160,7 @@ Wall {
 Wall {
   translation -1.0 -1.2 0
   rotation 0 0 1 1.5708
-  name "h_wall_15"
+  name "h_wall_16"
   size 0.04 0.4 0.12
   appearance Roughcast {
     colorOverride 0.141176 0.121569 0.192157
@@ -159,9 +168,19 @@ Wall {
   }
 }
 Wall {
-  translation 0.8 -1.2 0
+  translation -0.6 -0.8 0
   rotation 0 0 1 1.5708
-  name "h_wall_16"
+  name "h_wall_17"
+  size 0.04 0.4 0.12
+  appearance Roughcast {
+    colorOverride 0.141176 0.121569 0.192157
+    textureTransform TextureTransform { scale 2.4 1 }
+  }
+}
+Wall {
+  translation 0.4 -0.8 0
+  rotation 0 0 1 1.5708
+  name "h_wall_18"
   size 0.04 0.8 0.12
   appearance Roughcast {
     colorOverride 0.141176 0.121569 0.192157
@@ -169,27 +188,7 @@ Wall {
   }
 }
 Wall {
-  translation -1.0 -0.8 0
-  rotation 0 0 1 1.5708
-  name "h_wall_17"
-  size 0.04 1.2 0.12
-  appearance Roughcast {
-    colorOverride 0.141176 0.121569 0.192157
-    textureTransform TextureTransform { scale 2.4 1 }
-  }
-}
-Wall {
-  translation 0.6 -0.8 0
-  rotation 0 0 1 1.5708
-  name "h_wall_18"
-  size 0.04 1.2 0.12
-  appearance Roughcast {
-    colorOverride 0.141176 0.121569 0.192157
-    textureTransform TextureTransform { scale 2.4 1 }
-  }
-}
-Wall {
-  translation -1.0 -0.4 0
+  translation 1.4 -0.8 0
   rotation 0 0 1 1.5708
   name "h_wall_19"
   size 0.04 0.4 0.12
@@ -199,9 +198,19 @@ Wall {
   }
 }
 Wall {
-  translation 0.8 -0.4 0
+  translation 0.2 -0.4 0
   rotation 0 0 1 1.5708
   name "h_wall_20"
+  size 0.04 2.0 0.12
+  appearance Roughcast {
+    colorOverride 0.141176 0.121569 0.192157
+    textureTransform TextureTransform { scale 2.4 1 }
+  }
+}
+Wall {
+  translation -0.8 0.0 0
+  rotation 0 0 1 1.5708
+  name "h_wall_21"
   size 0.04 0.8 0.12
   appearance Roughcast {
     colorOverride 0.141176 0.121569 0.192157
@@ -209,17 +218,7 @@ Wall {
   }
 }
 Wall {
-  translation -1.0 0.0 0
-  rotation 0 0 1 1.5708
-  name "h_wall_21"
-  size 0.04 0.4 0.12
-  appearance Roughcast {
-    colorOverride 0.141176 0.121569 0.192157
-    textureTransform TextureTransform { scale 2.4 1 }
-  }
-}
-Wall {
-  translation 0.0 0.0 0
+  translation 0.4 0.0 0
   rotation 0 0 1 1.5708
   name "h_wall_22"
   size 0.04 0.8 0.12
@@ -229,19 +228,49 @@ Wall {
   }
 }
 Wall {
-  translation 0.2 0.4 0
+  translation -0.8 0.4 0
   rotation 0 0 1 1.5708
   name "h_wall_23"
-  size 0.04 2.0 0.12
+  size 0.04 1.6 0.12
   appearance Roughcast {
     colorOverride 0.141176 0.121569 0.192157
     textureTransform TextureTransform { scale 2.4 1 }
   }
 }
 Wall {
-  translation -0.2 0.8 0
+  translation 0.6 0.4 0
   rotation 0 0 1 1.5708
   name "h_wall_24"
+  size 0.04 0.4 0.12
+  appearance Roughcast {
+    colorOverride 0.141176 0.121569 0.192157
+    textureTransform TextureTransform { scale 2.4 1 }
+  }
+}
+Wall {
+  translation 0.0 0.8 0
+  rotation 0 0 1 1.5708
+  name "h_wall_25"
+  size 0.04 0.8 0.12
+  appearance Roughcast {
+    colorOverride 0.141176 0.121569 0.192157
+    textureTransform TextureTransform { scale 2.4 1 }
+  }
+}
+Wall {
+  translation 1.0 0.8 0
+  rotation 0 0 1 1.5708
+  name "h_wall_26"
+  size 0.04 0.4 0.12
+  appearance Roughcast {
+    colorOverride 0.141176 0.121569 0.192157
+    textureTransform TextureTransform { scale 2.4 1 }
+  }
+}
+Wall {
+  translation 1.4 1.2 0
+  rotation 0 0 1 1.5708
+  name "h_wall_27"
   size 0.04 0.4 0.12
   appearance Roughcast {
     colorOverride 0.141176 0.121569 0.192157
