@@ -1,6 +1,7 @@
 import json
 import os
 from .generator import find_dead_ends
+from .visualizer import render_ascii_maze
 
 
 def cell_to_world(row, col, rows, cols, cell_size=0.4):
@@ -159,3 +160,48 @@ def export_graph_json(
     with open(json_filename, "w", encoding="utf-8") as f:
         json.dump(payload, f, indent=2)
 
+
+def export_maze_txt(
+    graph,
+    rows,
+    cols,
+    wbt_filename,
+    json_filename,
+    txt_filename="maze_info.txt",
+    wall_count=0,
+    cell_size=0.4,
+    seed=None,
+    start=(0, 0),
+    goal=None,
+):
+    """Exports a human-readable ASCII map and summary info to a .txt file."""
+    if goal is None:
+        goal = (rows - 1, cols - 1)
+
+    start_xy = cell_to_world(start[0], start[1], rows, cols, cell_size)
+    goal_xy = cell_to_world(goal[0], goal[1], rows, cols, cell_size)
+    arena_x = round(cols * cell_size, 4)
+    arena_y = round(rows * cell_size, 4)
+    ascii_map = render_ascii_maze(graph, rows, cols, start=start, goal=goal)
+
+    report = [
+        f"Maze Summary: {rows}x{cols} Grid",
+        "=" * 40,
+        f"World File : {os.path.basename(wbt_filename)}",
+        f"Graph File : {os.path.basename(json_filename)}",
+        f"Seed       : {seed if seed is not None else 'Random'}",
+        f"Cell Size  : {cell_size} m",
+        f"Arena Size : {arena_x} m x {arena_y} m",
+        f"Wall Nodes : {wall_count} merged walls",
+        f"Start (S)  : cell {list(start)} -> world {start_xy} m",
+        f"Goal  (G)  : cell {list(goal)} -> world {goal_xy} m",
+        "",
+        "Top-Down Layout:",
+        ascii_map,
+        "",
+    ]
+
+    os.makedirs(os.path.dirname(os.path.abspath(txt_filename)), exist_ok=True)
+    with open(txt_filename, "w", encoding="utf-8") as f:
+        f.write("\n".join(report))
+        
