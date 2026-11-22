@@ -2,6 +2,8 @@
 
 Procedural $N \times M$ maze generator and parser for **Webots (R2025a)**. Generates synchronized `.wbt` simulation worlds (with collinear walls merged for fast rendering) and metadata-rich `.json` adjacency graphs ready for classical pathfinding benchmarks (**BFS, DFS, Dijkstra, A***).
 
+![Generated 8x8 Webots Maze Preview](assets/webots_8x8_preview.png)
+
 ---
 
 ## Features
